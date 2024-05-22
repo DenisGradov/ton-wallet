@@ -5,7 +5,7 @@ function Header({ privacy, setPrivacy }) {
   const walletInfo = {
     tonValue: "200.65",
     usdtValue: "1304.22",
-    profit: +0.24,
+    profit: 0.24,
   };
   function handleChangePrivacy() {
     setPrivacy(!privacy);
@@ -51,8 +51,8 @@ function Header({ privacy, setPrivacy }) {
             }
             className={
               privacy
-                ? `${styles["privacy__castleClosed"]} ${styles["privacy__castle"]}`
-                : `${styles["privacy__castleOpen"]} ${styles["privacy__castle"]}`
+                ? `${styles["privacy__castleOpen"]} ${styles["privacy__castle"]}`
+                : `${styles["privacy__castleClosed"]} ${styles["privacy__castle"]}`
             }
           />
         </div>
