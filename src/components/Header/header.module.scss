@@ -97,6 +97,9 @@ $color3: #a8a8a8;
       width: 66px;
       height: 36px;
       cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
     }
     .privacy {
       &__bg {

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import styles from "./password.module.scss";
@@ -15,6 +16,11 @@ function Password({ privacy }) {
       [valueKey]: e.target.value,
     }));
   }
+  function isEnglishAlphanumeric(text) {
+    const regex = /^[A-Za-z0-9!@#\$%\^\&*\)\(+=._-]+$/;
+    return regex.test(text);
+  }
+
   function handleSetNewPassword() {
     const errorOptions = [
       {
@@ -36,6 +42,11 @@ function Password({ privacy }) {
       {
         condition: password.newPassword.length < 10,
         errorText: "Новый пароль должен содержать 10+ символов",
+      },
+      {
+        condition: !isEnglishAlphanumeric(password.newPassword),
+        errorText:
+          "Новый пароль может содержать только английские буквы, символы и цифры",
       },
     ];
 

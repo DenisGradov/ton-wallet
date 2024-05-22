@@ -11,6 +11,14 @@ function App() {
     name: "",
     bio: "",
   });
+
+  const [toggleState, setToggleState] = useState({
+    //настройки тумблеров
+    allowNewContact: true,
+    alwaysAsk: true,
+    alwaysShowPreview: false,
+    neverShowPreview: false,
+  });
   return (
     <div className="mainbody">
       <Header privacy={privacy} setPrivacy={setPrivacy} />
@@ -20,6 +28,8 @@ function App() {
         setOpenTab={setOpenTab}
         userInfo={userInfo}
         setUserInfo={setUserInfo}
+        toggleState={toggleState}
+        setToggleState={setToggleState}
       />
     </div>
   );

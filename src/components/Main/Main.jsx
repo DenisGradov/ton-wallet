@@ -6,7 +6,15 @@ import Notifications from "./Content/Notifications/Notifications";
 import Profile from "./Content/Profile/Profile";
 import Navigation from "./Navigation/Navigation";
 import styles from "./main.module.scss";
-function Main({ privacy, openTab, setOpenTab, userInfo, setUserInfo }) {
+function Main({
+  privacy,
+  openTab,
+  setOpenTab,
+  userInfo,
+  setUserInfo,
+  toggleState,
+  setToggleState,
+}) {
   const content = {
     Profile: (
       <Profile
@@ -16,7 +24,13 @@ function Main({ privacy, openTab, setOpenTab, userInfo, setUserInfo }) {
       />
     ),
     Password: <Password privacy={privacy} />,
-    Messaging: <Messaging />,
+    Messaging: (
+      <Messaging
+        toggleState={toggleState}
+        setToggleState={setToggleState}
+        privacy={privacy}
+      />
+    ),
     Appearence: <Appearence />,
     Notifications: <Notifications />,
   };
