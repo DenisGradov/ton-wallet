@@ -15,6 +15,7 @@ $color4: #2f2f61;
   background-color: $color4;
   font-family: "Inter";
   width: 263px;
+  z-index: 1;
   @media (max-width: 600px) {
     width: 88px;
   }
@@ -28,6 +29,9 @@ $color4: #2f2f61;
   }
   &__close {
     width: 88px;
+    @media (max-width: 600px) {
+      width: 68px;
+    }
   }
 
   &-list {
@@ -61,6 +65,9 @@ $color4: #2f2f61;
         margin-left: 26px;
         font-size: 20px;
         color: #ffffff;
+        @media (max-width: 600px) {
+          display: none;
+        }
       }
     }
 

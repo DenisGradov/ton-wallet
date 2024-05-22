@@ -17,11 +17,8 @@ $color7: #a7a7cf;
     margin-left: 104px;
     color: #ffffff;
     font-size: 50px;
-    @media (max-width: 388px) {
-      margin-left: 100px;
-    }
-    @media (max-width: 348px) {
-      margin-left: -30px;
+    @media (max-width: 539px) {
+      margin-left: 10px;
     }
   }
 
@@ -33,36 +30,25 @@ $color7: #a7a7cf;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media (max-width: 876px) {
-    }
-    @media (max-width: 550px) {
-      position: relative;
-      left: -20px;
-    }
-    @media (max-width: 388px) {
-      position: relative;
-      left: -50px;
-    }
-    @media (max-width: 348px) {
-      position: relative;
-      left: -70px;
-    }
 
+    @media (max-width: 780px) {
+      align-items: start;
+    }
+    @media (max-width: 875px) {
+      margin-left: 10px;
+      margin-top: 10px;
+    }
     &__avatar {
       width: 237px;
       height: 237px;
       border-radius: 50%;
       margin-left: -100px;
-      @media (max-width: 876px) {
-        margin-left: -158px;
+      @media (max-width: 875px) {
+        margin-left: 0px;
       }
-      @media (max-width: 550px) {
-      }
-      @media (max-width: 388px) {
-        margin-left: -250px;
-      }
-      @media (max-width: 348px) {
-        margin-left: -290px;
+      @media (max-width: 539px) {
+        width: 157px;
+        height: 157px;
       }
     }
 
@@ -73,21 +59,6 @@ $color7: #a7a7cf;
       color: #ffffff;
       text-align: left;
       width: 100%;
-      @media (max-width: 876px) {
-        margin-left: -158px;
-        max-width: 300px;
-      }
-      @media (max-width: 550px) {
-        max-width: 60vw;
-      }
-      @media (max-width: 388px) {
-        margin-left: 300px;
-        max-width: 60vw;
-      }
-      @media (max-width: 348px) {
-        margin-left: 400px;
-        max-width: 60vw;
-      }
     }
 
     &__textarea,
@@ -99,24 +70,8 @@ $color7: #a7a7cf;
       max-width: 458px;
       font-size: 20px;
       color: $color7;
-      @media (max-width: 876px) {
-        margin-left: -158px;
-        max-width: 300px;
-      }
-      @media (max-width: 550px) {
-        position: relative;
-        left: -20px;
-        max-width: 60vw;
-      }
-      @media (max-width: 388px) {
-        position: relative;
-        left: -50px;
-        max-width: 60vw;
-      }
-      @media (max-width: 348px) {
-        position: relative;
-        left: -70px;
-        max-width: 60vw;
+      @media (max-width: 780px) {
+        max-width: 45vw;
       }
     }
 
