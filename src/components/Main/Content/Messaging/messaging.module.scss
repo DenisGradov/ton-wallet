@@ -1,6 +1,7 @@
-$color5: #3f3f86;
-$color6: #2f2f61;
-$color7: #a7a7cf;
+$color4: var(--colour4);
+$color5: var(--colour5);
+$color6: var(--colour6);
+$color7: var(--colour7);
 @mixin onHover-mixin($scaleSize, $animationTime) {
   cursor: pointer;
   transition-duration: $animationTime;
@@ -33,7 +34,7 @@ $color7: #a7a7cf;
     }
 
     &__title {
-      color: #ffffff;
+      color: $color4;
       font-size: 50px;
       @media (max-width: 380px) {
         font-size: 40px;

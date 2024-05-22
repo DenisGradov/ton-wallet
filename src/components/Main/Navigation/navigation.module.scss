@@ -1,5 +1,6 @@
-$color2: #616185;
-$color4: #2f2f61;
+$color2: var(--colour2);
+$color4: var(--colour4);
+$color8: var(--colour8);
 
 @mixin onHover-mixin($scaleSize, $animationTime) {
   cursor: pointer;
@@ -12,7 +13,7 @@ $color4: #2f2f61;
 
 .navigation {
   height: 100%;
-  background-color: $color4;
+  background-color: $color8;
   font-family: "Inter";
   width: 263px;
   z-index: 1;
@@ -64,7 +65,7 @@ $color4: #2f2f61;
       &__text {
         margin-left: 26px;
         font-size: 20px;
-        color: #ffffff;
+        color: $color4;
         @media (max-width: 600px) {
           display: none;
         }

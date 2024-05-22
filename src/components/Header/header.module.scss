@@ -1,7 +1,7 @@
-$color1: #1b1b38;
-$color2: #616185;
-$color3: #a8a8a8;
-
+$color1: var(--colour1);
+$color2: var(--colour2);
+$color3: var(--colour3);
+$color4: var(--colour4);
 @mixin onHover-mixin($scaleSize, $animationTime) {
   cursor: pointer;
   transition-duration: $animationTime;
@@ -42,7 +42,7 @@ $color3: #a8a8a8;
       }
       &__text {
         margin-left: 4px;
-        color: #ffffff;
+        color: $color4;
         font-size: 20px;
         @media (max-width: 636px) {
           display: none;
@@ -50,7 +50,7 @@ $color3: #a8a8a8;
       }
       &__ton,
       &__usdt {
-        color: #ffffff;
+        color: $color4;
         font-size: 15px;
         background-color: $color1;
       }

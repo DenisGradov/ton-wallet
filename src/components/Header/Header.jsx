@@ -1,7 +1,8 @@
+import { themas } from "../../themas/themas";
 import styles from "./header.module.scss";
 
 // eslint-disable-next-line react/prop-types
-function Header({ privacy, setPrivacy }) {
+function Header({ privacy, setPrivacy, userThema }) {
   const walletInfo = {
     tonValue: "200.65",
     usdtValue: "1304.22",
@@ -11,7 +12,18 @@ function Header({ privacy, setPrivacy }) {
     setPrivacy(!privacy);
   }
   return (
-    <div className={styles["wrapper"]}>
+    <div
+      className={styles["wrapper"]}
+      style={
+        ({ "--colour1": themas[userThema]["color1"] },
+        { "--colour2": themas[userThema]["color2"] },
+        { "--colour3": themas[userThema]["color3"] },
+        { "--colour4": themas[userThema]["color4"] },
+        { "--colour5": themas[userThema]["color5"] },
+        { "--colour6": themas[userThema]["color6"] },
+        { "--colour7": themas[userThema]["color7"] })
+      }
+    >
       <div className={styles["header"]}>
         <a href="">
           <img

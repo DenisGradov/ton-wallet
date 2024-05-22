@@ -14,6 +14,8 @@ function Main({
   setUserInfo,
   toggleState,
   setToggleState,
+  userThema,
+  setUserThema,
 }) {
   const content = {
     Profile: (
@@ -31,7 +33,13 @@ function Main({
         privacy={privacy}
       />
     ),
-    Appearence: <Appearence />,
+    Appearence: (
+      <Appearence
+        privacy={privacy}
+        userThema={userThema}
+        setUserThema={setUserThema}
+      />
+    ),
     Notifications: <Notifications />,
   };
   return (

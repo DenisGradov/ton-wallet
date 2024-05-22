@@ -1,6 +1,7 @@
-$color5: #3f3f86;
-$color6: #2f2f61;
-$color7: #a7a7cf;
+$color4: var(--colour4);
+$color5: var(--colour5);
+$color6: var(--colour6);
+$color7: var(--colour7);
 
 .wrapper {
   flex-grow: 1;
@@ -15,7 +16,7 @@ $color7: #a7a7cf;
   &__title {
     margin-top: 14px;
     margin-left: 104px;
-    color: #ffffff;
+    color: $color4;
     font-size: 50px;
     @media (max-width: 539px) {
       margin-left: 10px;
@@ -56,7 +57,7 @@ $color7: #a7a7cf;
       margin-top: 24px;
       margin-bottom: 7px;
       font-size: 20px;
-      color: #ffffff;
+      color: $color4;
       text-align: left;
       width: 100%;
     }

@@ -1,0 +1,32 @@
+export const themas = {
+  Dark: {
+    color1: "#1b1b38",
+    color2: "#616185",
+    color3: "#a8a8a8",
+    color4: "#FFFFFF",
+    color5: "#3f3f86",
+    color6: "#2f2f61",
+    color7: "#a7a7cf",
+    color8: "#2f2f61",
+  },
+  Light: {
+    color1: "red",
+    color2: "green",
+    color3: "blue",
+    color4: "yellow",
+    color5: "orange",
+    color6: "pink",
+    color7: "purple",
+    color8: "sky",
+  },
+  UFO: {
+    color1: "#1b1b38",
+    color2: "#616185",
+    color3: "#a8a8a8",
+    color4: "#FFFFFF",
+    color5: "#3f3f86",
+    color6: "#2f2f61",
+    color7: "#a7a7cf",
+    color8: "#2f2f61",
+  },
+};
