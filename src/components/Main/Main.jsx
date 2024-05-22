@@ -15,7 +15,7 @@ function Main({ privacy, openTab, setOpenTab, userInfo, setUserInfo }) {
         setUserInfo={setUserInfo}
       />
     ),
-    Password: <Password />,
+    Password: <Password privacy={privacy} />,
     Messaging: <Messaging />,
     Appearence: <Appearence />,
     Notifications: <Notifications />,
