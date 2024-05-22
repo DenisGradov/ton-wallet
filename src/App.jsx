@@ -6,13 +6,22 @@ import { themas } from "./themas/themas";
 
 function App() {
   const [privacy, setPrivacy] = useState(false);
-  const [openTab, setOpenTab] = useState("Profile");
+  const [search, setSearch] = useState("");
+  const [userOpen, setUserOpen] = useState(false);
+  const [openTab, setOpenTab] = useState("Chat");
+  const [blurPassword, setBlurPassword] = useState("");
   const [userInfo, setUserInfo] = useState({
     avatar: null, //путь к дефолт фотке "./assets/userAvatar.png"
     name: "",
     bio: "",
   });
 
+  const [password, setPassword] = useState({
+    currentPassword: "test",
+    newPassword: "",
+    confirmNewPassword: "",
+    passChangeError: "", //функция handleUpdatePassword проверяет данные, после чего возвращается true, если все гуд, и false, если есть проблемы. Описание ошибки засовывается в это значение (в password.passChangeError)
+  });
   const [userThema, setUserThema] = useState(Object.keys(themas)[0]);
 
   const currentTheme = themas[userThema];
@@ -22,6 +31,10 @@ function App() {
     alwaysAsk: true,
     alwaysShowPreview: false,
     neverShowPreview: false,
+    personalChats: true,
+    groupChats: true,
+    mentions: true,
+    allMessages: false,
   });
   return (
     <div
@@ -35,11 +48,20 @@ function App() {
         "--colour6": currentTheme.color6,
         "--colour7": currentTheme.color7,
         "--colour8": currentTheme.color8,
+        "--colour9": currentTheme.color9,
+        "--gradient1": currentTheme.gradient1,
       }}
     >
-      <Header privacy={privacy} setPrivacy={setPrivacy} userThema={userThema} />
+      <Header
+        privacy={privacy}
+        openTab={openTab}
+        setOpenTab={setOpenTab}
+        setPrivacy={setPrivacy}
+        userThema={userThema}
+      />
       <Main
         privacy={privacy}
+        setPrivacy={setPrivacy}
         openTab={openTab}
         setOpenTab={setOpenTab}
         userInfo={userInfo}
@@ -48,6 +70,14 @@ function App() {
         setToggleState={setToggleState}
         userThema={userThema}
         setUserThema={setUserThema}
+        search={search}
+        setSearch={setSearch}
+        userOpen={userOpen}
+        setUserOpen={setUserOpen}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
       />
     </div>
   );

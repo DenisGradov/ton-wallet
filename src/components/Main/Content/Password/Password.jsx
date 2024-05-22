@@ -1,15 +1,15 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import styles from "./password.module.scss";
 import Blur from "../../Blur/Blur";
-function Password({ privacy }) {
-  const [password, setPassword] = useState({
-    currentPassword: "",
-    newPassword: "",
-    confirmNewPassword: "",
-    passChangeError: "", //функция handleUpdatePassword проверяет данные, после чего возвращается true, если все гуд, и false, если есть проблемы. Описание ошибки засовывается в это значение (в password.passChangeError)
-  });
+function Password({
+  privacy,
+  blurPassword,
+  setBlurPassword,
+  password,
+  setPassword,
+  setPrivacy,
+}) {
   function handleUpdatePassword(e, valueKey) {
     setPassword((prevPassword) => ({
       ...prevPassword,
@@ -64,7 +64,6 @@ function Password({ privacy }) {
     console.log("good");
     return true;
   }
-
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["password"]}>
@@ -82,6 +81,7 @@ function Password({ privacy }) {
             onChange={(e) => {
               handleUpdatePassword(e, "currentPassword");
             }}
+            type="password"
             value={password.currentPassword}
             placeholder="Enter current password"
             className={styles["password-content__input"]}
@@ -91,6 +91,7 @@ function Password({ privacy }) {
             onChange={(e) => {
               handleUpdatePassword(e, "newPassword");
             }}
+            type="password"
             value={password.newPassword}
             placeholder="Enter new password"
             className={styles["password-content__input"]}
@@ -106,6 +107,7 @@ function Password({ privacy }) {
             onChange={(e) => {
               handleUpdatePassword(e, "confirmNewPassword");
             }}
+            type="password"
             value={password.confirmNewPassword}
             placeholder="Enter new password"
             className={styles["password-content__input"]}
@@ -119,7 +121,15 @@ function Password({ privacy }) {
         </div>
       </div>
 
-      {privacy && <Blur />}
+      {privacy && (
+        <Blur
+          blurPassword={blurPassword}
+          setBlurPassword={setBlurPassword}
+          password={password}
+          setPassword={setPassword}
+          setPrivacy={setPrivacy}
+        />
+      )}
     </div>
   );
 }

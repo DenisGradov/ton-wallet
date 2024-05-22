@@ -2,6 +2,7 @@ $color1: var(--colour1);
 $color2: var(--colour2);
 $color3: var(--colour3);
 $color4: var(--colour4);
+$color5: var(--colour5);
 @mixin onHover-mixin($scaleSize, $animationTime) {
   cursor: pointer;
   transition-duration: $animationTime;
@@ -24,6 +25,11 @@ $color4: var(--colour4);
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+    &__arrow {
+      font-size: 40px;
+      color: $color5;
+      @include onHover-mixin(1.1, 0.3s);
+    }
     &-walletInfo {
       padding: 4px 5px;
       display: flex;

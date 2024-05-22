@@ -28,10 +28,6 @@ $color7: var(--colour7);
     margin-left: 104px;
     display: flex;
     flex-direction: column;
-    @media (max-width: 877px) {
-      max-width: 300px;
-      margin-left: 10px;
-    }
 
     &__title {
       color: $color4;
@@ -46,7 +42,7 @@ $color7: var(--colour7);
       align-items: center;
       &__text {
         margin-right: 101px;
-        color: #ffffff;
+        color: $color4;
         font-size: 20px;
         &Bottom {
           margin-top: 67px;

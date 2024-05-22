@@ -2,7 +2,16 @@ const PATH_TO_DEFAULT_AVATAR = "./assets/userAvatar.png";
 import Blur from "../../Blur/Blur";
 /* eslint-disable react/prop-types */
 import styles from "./profile.module.scss";
-function Profile({ privacy, userInfo, setUserInfo }) {
+function Profile({
+  privacy,
+  userInfo,
+  setUserInfo,
+  blurPassword,
+  setBlurPassword,
+  password,
+  setPassword,
+  setPrivacy,
+}) {
   const handleImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
@@ -66,7 +75,15 @@ function Profile({ privacy, userInfo, setUserInfo }) {
         </div>
       </div>
 
-      {privacy && <Blur />}
+      {privacy && (
+        <Blur
+          blurPassword={blurPassword}
+          setBlurPassword={setBlurPassword}
+          password={password}
+          setPassword={setPassword}
+          setPrivacy={setPrivacy}
+        />
+      )}
     </div>
   );
 }

@@ -1,15 +1,19 @@
+import { RiArrowLeftFill } from "react-icons/ri";
 import { themas } from "../../themas/themas";
 import styles from "./header.module.scss";
 
 // eslint-disable-next-line react/prop-types
-function Header({ privacy, setPrivacy, userThema }) {
+function Header({ privacy, setPrivacy, userThema, openTab, setOpenTab }) {
   const walletInfo = {
     tonValue: "200.65",
     usdtValue: "1304.22",
     profit: 0.24,
   };
   function handleChangePrivacy() {
-    setPrivacy(!privacy);
+    setPrivacy(true);
+  }
+  function handleGoToChat() {
+    setOpenTab("Chat");
   }
   return (
     <div
@@ -25,14 +29,22 @@ function Header({ privacy, setPrivacy, userThema }) {
       }
     >
       <div className={styles["header"]}>
-        <a href="">
-          <img
-            className={styles["header__logo"]}
-            alt="logo"
-            src="./assets/logo.png"
-          />
-        </a>
-
+        {" "}
+        <div>
+          {openTab != "Chat" && (
+            <RiArrowLeftFill
+              onClick={handleGoToChat}
+              className={styles["header__arrow"]}
+            />
+          )}
+          <a href="">
+            <img
+              className={styles["header__logo"]}
+              alt="logo"
+              src="./assets/logo.png"
+            />
+          </a>
+        </div>
         <div className={styles["header-walletInfo"]}>
           <img
             className={styles["walletInfo__logo"]}

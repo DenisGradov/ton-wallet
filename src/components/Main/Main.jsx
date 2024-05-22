@@ -6,8 +6,10 @@ import Notifications from "./Content/Notifications/Notifications";
 import Profile from "./Content/Profile/Profile";
 import Navigation from "./Navigation/Navigation";
 import styles from "./main.module.scss";
+import Chat from "./Content/Chat/Chat";
 function Main({
   privacy,
+  setPrivacy,
   openTab,
   setOpenTab,
   userInfo,
@@ -16,21 +18,67 @@ function Main({
   setToggleState,
   userThema,
   setUserThema,
+  search,
+  setSearch,
+  userOpen,
+  setUserOpen,
+  blurPassword,
+  setBlurPassword,
+  password,
+  setPassword,
 }) {
   const content = {
+    Chat: (
+      <Chat
+        search={search}
+        setSearch={setSearch}
+        userOpen={userOpen}
+        setUserOpen={setUserOpen}
+        privacy={privacy}
+        userInfo={userInfo}
+        setUserInfo={setUserInfo}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
+        setPrivacy={setPrivacy}
+        toggleState={toggleState}
+      />
+    ),
     Profile: (
       <Profile
         privacy={privacy}
         userInfo={userInfo}
         setUserInfo={setUserInfo}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
+        setPrivacy={setPrivacy}
       />
     ),
-    Password: <Password privacy={privacy} />,
+    Password: (
+      <Password
+        toggleState={toggleState}
+        setToggleState={setToggleState}
+        privacy={privacy}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
+        setPrivacy={setPrivacy}
+      />
+    ),
     Messaging: (
       <Messaging
         toggleState={toggleState}
         setToggleState={setToggleState}
         privacy={privacy}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
+        setPrivacy={setPrivacy}
       />
     ),
     Appearence: (
@@ -38,9 +86,25 @@ function Main({
         privacy={privacy}
         userThema={userThema}
         setUserThema={setUserThema}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
+        setPrivacy={setPrivacy}
       />
     ),
-    Notifications: <Notifications />,
+    Notifications: (
+      <Notifications
+        toggleState={toggleState}
+        setToggleState={setToggleState}
+        privacy={privacy}
+        blurPassword={blurPassword}
+        setBlurPassword={setBlurPassword}
+        password={password}
+        setPassword={setPassword}
+        setPrivacy={setPrivacy}
+      />
+    ),
   };
   return (
     <div className={styles["wrapper"]}>

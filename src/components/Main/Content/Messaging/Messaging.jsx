@@ -2,7 +2,16 @@
 import Toggle from "../../../Toggle/Toggle";
 import Blur from "../../Blur/Blur";
 import styles from "./messaging.module.scss";
-function Messaging({ toggleState, setToggleState, privacy }) {
+function Messaging({
+  toggleState,
+  setToggleState,
+  privacy,
+  blurPassword,
+  setBlurPassword,
+  password,
+  setPassword,
+  setPrivacy,
+}) {
   function handleChangeToggleState(e, valueKey) {
     setToggleState((prevToggleState) => ({
       ...prevToggleState,
@@ -63,7 +72,15 @@ function Messaging({ toggleState, setToggleState, privacy }) {
           </div>
         </div>
       </div>
-      {privacy && <Blur />}
+      {privacy && (
+        <Blur
+          blurPassword={blurPassword}
+          setBlurPassword={setBlurPassword}
+          password={password}
+          setPassword={setPassword}
+          setPrivacy={setPrivacy}
+        />
+      )}
     </div>
   );
 }

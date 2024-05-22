@@ -1,7 +1,17 @@
 /* eslint-disable react/prop-types */
 import { themas } from "../../../../themas/themas";
+import Blur from "../../Blur/Blur";
 import styles from "./appearence.module.scss";
-function Appearence({ userThema, setUserThema }) {
+function Appearence({
+  userThema,
+  setUserThema,
+  privacy,
+  blurPassword,
+  setBlurPassword,
+  password,
+  setPassword,
+  setPrivacy,
+}) {
   function handleUserThemaUpdate(thema) {
     setUserThema(thema);
   }
@@ -47,6 +57,15 @@ function Appearence({ userThema, setUserThema }) {
           </div>
         </div>
       </div>
+      {privacy && (
+        <Blur
+          blurPassword={blurPassword}
+          setBlurPassword={setBlurPassword}
+          password={password}
+          setPassword={setPassword}
+          setPrivacy={setPrivacy}
+        />
+      )}
     </div>
   );
 }
