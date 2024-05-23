@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { users } from "../../../../users/users";
 import styles from "./chat.module.scss";
@@ -14,6 +15,11 @@ function Chat({
   setUserOpen,
   privacy,
   toggleState,
+  blurPassword,
+  password,
+  setPassword,
+  setPrivacy,
+  setBlurPassword,
 }) {
   const chatHistoryRef = useRef(null);
 
@@ -196,7 +202,15 @@ function Chat({
       {toggleState.alwaysAsk && warning.state && (
         <Warning warning={warning} setWarning={setWarning} />
       )}
-      {privacy && <Blur />}
+      {privacy && (
+        <Blur
+          blurPassword={blurPassword}
+          setBlurPassword={setBlurPassword}
+          password={password}
+          setPassword={setPassword}
+          setPrivacy={setPrivacy}
+        />
+      )}
     </div>
   );
 }

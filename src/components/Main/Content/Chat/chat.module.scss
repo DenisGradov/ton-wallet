@@ -7,6 +7,24 @@ $color7: var(--colour7);
 $color9: var(--colour9);
 $gradient1: var(--gradient1);
 
+::-webkit-scrollbar {
+  display: flex;
+  align-items: center;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color2;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $color1;
+  border: 1px solid #000;
+  opacity: 0.3;
+  border-radius: 6px;
+}
+
 @mixin onHover-mixin($scaleSize, $animationTime) {
   cursor: pointer;
   transition-duration: $animationTime;
@@ -28,6 +46,8 @@ $gradient1: var(--gradient1);
 }
 
 .chat {
+  position: fixed;
+  left: 87px;
   background-color: $color5;
   display: flex;
   width: 100%;
@@ -63,7 +83,10 @@ $gradient1: var(--gradient1);
         align-items: center;
         width: 95%;
         background-color: $color7;
-        @include onHover-mixin(1.01, 0.3s);
+        @include onHover-mixin(1, 0.3s);
+        &:hover {
+          opacity: 0.5;
+        }
         &__avatar {
           width: 42px;
           height: 42px;
@@ -102,7 +125,7 @@ $gradient1: var(--gradient1);
       display: flex;
       flex-direction: column;
       padding: 11px;
-      width: 90%;
+      width: 85%;
     }
 
     &-top {

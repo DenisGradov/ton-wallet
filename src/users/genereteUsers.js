@@ -40,19 +40,19 @@ function getRandomName() {
 function generateMessages() {
   const messages = [];
   const numMessages = getRandomNumber(1, 20);
-  const currentTime = Math.floor(Date.now() / 1000); // Поточний час у юніксовому форматі
+  const currentTime = Math.floor(Date.now() / 1000);
 
   for (let i = 0; i < numMessages; i++) {
     const owner = Math.random() < 0.5;
     const text = "Message " + (i + 1);
-    const data = currentTime - (numMessages - 1 - i) * 60; // Зменшуємо час на 1 хвилину за кожне попереднє повідомлення
+    const data = currentTime - (numMessages - 1 - i) * 60;
     messages.push({ id: i, data, text, owner });
   }
   return messages;
 }
 
 const users = [];
-for (let i = 0; i < 666; i++) {
+for (let i = 0; i < 22; i++) {
   const name = getRandomName();
   const id = i + 1;
   const messages = generateMessages();
@@ -62,11 +62,10 @@ for (let i = 0; i < 666; i++) {
 
 const usersJSON = JSON.stringify(users, null, 2);
 
-// Запис даних у файл users.json
 writeFile("./src/users/users.json", usersJSON, (err) => {
   if (err) {
-    console.error("Помилка запису у файл:", err);
+    console.error("Ошибка записи данных в файл:", err);
     return;
   }
-  console.log("Дані успішно записані у файл users.json");
+  console.log("Данные успешно записаны в users.json");
 });

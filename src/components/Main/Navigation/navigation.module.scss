@@ -24,14 +24,25 @@ $color8: var(--colour8);
 
   &__open {
     width: 263px;
-    @media (max-width: 600px) {
-      width: 68px;
-    }
   }
   &__close {
     width: 88px;
-    @media (max-width: 600px) {
-      width: 68px;
+
+    .listItem__text {
+      display: none;
+      margin-left: 26px;
+      font-size: 20px;
+      color: $color4;
+    }
+    &:hover {
+      width: 263px;
+      .listItem__text {
+        display: none;
+        margin-left: 26px;
+        font-size: 20px;
+        color: $color4;
+        display: block;
+      }
     }
   }
 
@@ -54,12 +65,8 @@ $color8: var(--colour8);
       }
       cursor: pointer;
       &__icon {
-        width: 50px;
-        height: 50px;
-        @media (max-width: 600px) {
-          width: 40px;
-          height: 40px;
-        }
+        width: 30px;
+        height: 30px;
       }
 
       &__text {

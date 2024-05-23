@@ -23,18 +23,8 @@ function Profile({
     }
   };
 
-  const handleAvatarClick = () => {
-    document.getElementById("fileInput").click();
-  };
   function handleUpdateUserInfo(e, valueKey) {
     setUserInfo((prevInfo) => ({ ...prevInfo, [valueKey]: e.target.value }));
-  }
-  function handleSetDefaultAvatar(e) {
-    e.preventDefault();
-    setUserInfo((prevInfo) => ({
-      ...prevInfo,
-      avatar: PATH_TO_DEFAULT_AVATAR,
-    }));
   }
   return (
     <div className={styles["wrapper"]}>
@@ -42,8 +32,6 @@ function Profile({
         <h1 className={styles["profile__title"]}>Profile</h1>
         <div className={styles["profile-content"]}>
           <img
-            onContextMenu={handleSetDefaultAvatar}
-            onClick={handleAvatarClick}
             src={userInfo.avatar ? userInfo.avatar : PATH_TO_DEFAULT_AVATAR}
             alt="avatar"
             className={styles["profile-content__avatar"]}

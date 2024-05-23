@@ -14,7 +14,7 @@ function Navigation({ privacy, openTab, setOpenTab }) {
   return (
     <div
       className={`${styles["navigation"]} ${
-        privacy ? styles["navigation__close"] : styles["navigation__open"]
+        privacy ? styles["navigation__close"] : styles["navigation__close"]
       }`}
     >
       <div className={styles["navigation-list"]}>
