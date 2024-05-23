@@ -75,6 +75,10 @@ $gradient1: var(--gradient1);
       margin-left: 4px;
       overflow-y: auto;
       max-height: 90vh;
+      .userActive {
+        opacity: 0.5;
+      }
+      .userActive,
       .user {
         position: relative;
         margin-top: 5px;

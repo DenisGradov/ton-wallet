@@ -49,6 +49,7 @@ function App() {
         "--colour7": currentTheme.color7,
         "--colour8": currentTheme.color8,
         "--colour9": currentTheme.color9,
+        "--blur": currentTheme.blur,
         "--gradient1": currentTheme.gradient1,
       }}
     >

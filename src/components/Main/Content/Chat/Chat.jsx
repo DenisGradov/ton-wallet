@@ -121,10 +121,15 @@ function Chat({
                 user.name.toLowerCase().includes(search.toLowerCase())
               )
               .map((user, index) => {
+                console.log(userOpen == user.id);
                 return (
                   <div
                     onClick={() => handleUpdateUserOpen(user)}
-                    className={styles["user"]}
+                    className={
+                      userOpen == user.id
+                        ? styles["userActive"]
+                        : styles["user"]
+                    }
                     key={`Юзер $${index}`}
                   >
                     <img
