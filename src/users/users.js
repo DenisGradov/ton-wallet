@@ -7,7 +7,7 @@ export const users = [
       {
         id: 0,
         data: 1716460146,
-        text: "Message 1",
+        text: "Чекни мой гит https://github.com/",
         owner: true,
       },
       {

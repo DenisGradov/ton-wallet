@@ -85,6 +85,7 @@ function Chat({
           className={styles.link}
           onClick={(e) => {
             e.preventDefault();
+            if (!toggleState.alwaysAsk) window.open(match.url, "_blank");
             setWarning({ state: true, link: match.url });
           }}
         >

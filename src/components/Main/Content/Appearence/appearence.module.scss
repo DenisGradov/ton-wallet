@@ -16,6 +16,8 @@ $color7: var(--colour7);
   flex-grow: 1;
 }
 .appearence {
+  position: fixed;
+  left: 87px;
   background-color: $color5;
   display: flex;
   flex-direction: column;

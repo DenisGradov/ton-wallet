@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { lazy, useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import { themas } from "./themas/themas";
+import Loader from "./components/Loader/Loader";
 
 function App() {
   const [privacy, setPrivacy] = useState(false);
