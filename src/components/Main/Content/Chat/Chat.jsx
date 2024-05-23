@@ -52,17 +52,17 @@ function Chat({
     const secondsInDay = 86400;
 
     if (timeDifference < secondsInMinute) {
-      return `${timeDifference}с назад`;
+      return `${timeDifference}s ago`;
     } else if (timeDifference < secondsInHour) {
       const minutes = Math.floor(timeDifference / secondsInMinute);
-      return `${minutes}м назад`;
+      return `${minutes}m ago`;
     } else if (timeDifference < secondsInDay) {
       const hours = Math.floor(timeDifference / secondsInHour);
-      return `${hours}ч назад`;
+      return `${hours}h ago`;
     } else {
       const date = new Date(unixTime * 1000);
       const options = { day: "numeric", month: "long" };
-      return date.toLocaleDateString("ru-RU", options);
+      return date.toLocaleDateString("en-US", options);
     }
   }
 
@@ -194,13 +194,11 @@ function Chat({
             </div>
           </div>
           <div className={styles["messageSendBlock"]}>
-            <input
+            <textarea
               placeholder="Message..."
               className={styles["messageSendBlock__input"]}
-            ></input>
-            <button className={styles["messageSendBlock__button"]}>
-              Отправить
-            </button>
+            ></textarea>
+            <button className={styles["messageSendBlock__button"]}>Send</button>
           </div>
         </div>
       </div>
