@@ -26,6 +26,10 @@ $gradient1: var(--gradient1);
 }
 textarea {
   resize: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 @mixin onHover-mixin($scaleSize, $animationTime) {
   cursor: pointer;
@@ -238,9 +242,9 @@ textarea {
     height: 100px;
     background-color: $color6;
     &__input {
-      height: 40px;
+      height: 15px;
       width: 500px;
-      padding: 0 20px;
+      padding: 15px 20px;
       background-color: $color2;
       border-radius: 22.5px;
       color: $color4;

@@ -194,10 +194,12 @@ function Chat({
             </div>
           </div>
           <div className={styles["messageSendBlock"]}>
-            <textarea
-              placeholder="Message..."
-              className={styles["messageSendBlock__input"]}
-            ></textarea>
+            <div className={styles["messageSendBlock__inputblock"]}>
+              <textarea
+                placeholder="Message..."
+                className={styles["messageSendBlock__input"]}
+              ></textarea>
+            </div>
             <button className={styles["messageSendBlock__button"]}>Send</button>
           </div>
         </div>
