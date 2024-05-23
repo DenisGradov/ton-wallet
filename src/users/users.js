@@ -22,6 +22,12 @@ export const users = [
         text: "Messhttps://react-icons.github.io/react-icons/icons/ri/age 3",
         owner: false,
       },
+      {
+        id: 3,
+        data: 1716411529,
+        text: "Забери халявный тон тут: https://react-icons.github.io/react-icons/icons/ri/age",
+        owner: false,
+      },
     ],
   },
   {

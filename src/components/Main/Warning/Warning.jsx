@@ -12,9 +12,7 @@ function Warning({ warning, setWarning }) {
     <div className={styles.wrapper}>
       <div className={styles.warning}>
         <img className={styles.warning__nlo} src="./assets/nlo/warning.png" />
-        <h2 className={styles.warning__text}>
-          Are you sure you want to follow the link?
-        </h2>
+        <h2 className={styles.warning__text}>Open?</h2>
         <span className={styles.warning__link}>
           {warning.link.slice(0, 40)}
         </span>

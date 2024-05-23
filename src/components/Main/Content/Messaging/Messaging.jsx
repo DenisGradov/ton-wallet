@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import Toggle from "../../../Toggle/Toggle";
 import Blur from "../../Blur/Blur";
 import styles from "./messaging.module.scss";
@@ -12,6 +13,10 @@ function Messaging({
   setPassword,
   setPrivacy,
 }) {
+  useEffect(() => {
+    //запрос на бекенд для смены allow new contact
+  }, [toggleState.allowNewContact]);
+
   function handleChangeToggleState(e, valueKey) {
     setToggleState((prevToggleState) => ({
       ...prevToggleState,

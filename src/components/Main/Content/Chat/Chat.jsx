@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { users } from "../../../../users/users";
 import styles from "./chat.module.scss";
@@ -28,6 +27,7 @@ function Chat({
     state: false,
     link: "",
   });
+
   function handleUpdateInput(e) {
     setSearch(e.target.value);
   }
@@ -35,7 +35,9 @@ function Chat({
   function handleUpdateUserOpen(user) {
     setUserOpen(user.id);
   }
+
   console.log(warning);
+
   function formatTime(unixTime) {
     const currentTime = Math.floor(Date.now() / 1000);
     const timeDifference = currentTime - unixTime;
@@ -58,19 +60,39 @@ function Chat({
     }
   }
 
-  function handleClickOnText(e) {
-    const text = e.target.innerText;
+  function parseMessageText(text) {
     const matches = linkifyInstance.match(text);
-
-    if (matches) {
-      matches.forEach((match) => {
-        if (match.url) {
-          e.preventDefault();
-          console.log(match.url);
-          setWarning({ state: true, link: match.url });
-        }
-      });
+    if (!matches) {
+      return text;
     }
+
+    const parts = [];
+    let lastIndex = 0;
+
+    matches.forEach((match, index) => {
+      if (match.index > lastIndex) {
+        parts.push(text.slice(lastIndex, match.index));
+      }
+      parts.push(
+        <span
+          key={index}
+          className={styles.link}
+          onClick={(e) => {
+            e.preventDefault();
+            setWarning({ state: true, link: match.url });
+          }}
+        >
+          {match.url}
+        </span>
+      );
+      lastIndex = match.lastIndex;
+    });
+
+    if (lastIndex < text.length) {
+      parts.push(text.slice(lastIndex));
+    }
+
+    return parts;
   }
 
   const user = users.find((user) => user.id === userOpen);
@@ -142,9 +164,8 @@ function Chat({
                               ? styles["message__textOwner"]
                               : styles["message__textSender"]
                           }
-                          onClick={(e) => handleClickOnText(e)}
                         >
-                          {message.text}
+                          {parseMessageText(message.text)}
                         </h3>
                         <h3
                           className={
@@ -175,7 +196,7 @@ function Chat({
       {toggleState.alwaysAsk && warning.state && (
         <Warning warning={warning} setWarning={setWarning} />
       )}
-      ;{privacy && <Blur />};
+      {privacy && <Blur />}
     </div>
   );
 }
